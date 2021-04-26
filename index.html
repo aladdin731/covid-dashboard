@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            width: 80vw;
+            height: 500px;
+            position: relative; 
+            margin: 50px auto;
+            border: 1px solid black;
+        }
+
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-header">
+            <h1>Covid Dashboard</h1>
+        </div>
+        <div class="overview">
+            <h1>Overview</h1>
+            <div class="main-body">
+                <div class="main-stat">
+                    <h2 class="stat-heading">Total cases: </h2>
+                    <h1 class="total-cases"></h1>
+                </div>
+                <div class="main-stat">
+                    <h2 class="stat-heading">Recovered cases: </h2>
+                    <h1 class="recovered-cases"></h1>
+                </div>
+                <div class="main-stat">
+                    <h2 class="stat-heading">Deaths: </h2>
+                    <h1 class="deaths"></h1>
+                </div>
+                <div class="main-stat">
+                    <h2 class="stat-heading">Active cases: </h2>
+                    <h1 class="active-cases"></h1>
+                </div>
+                <div class="main-stat">
+                    <h2 class="stat-heading">Test cases: </h2>
+                    <h1 class="test-cases"></h1>
+                </div>
+                <div class="main-stat">
+                    <h2 class="stat-heading">Today increased cases: </h2>
+                    <h1 class="today-increse-cases"></h1>
+                </div>
+                <div class="main-stat">
+                    <h2 class="stat-heading">Today recovered cases: </h2>
+                    <h1 class="today-recovered-cases"></h1>
+                </div>
+                <div class="main-stat">
+                    <h2 class="stat-heading">Today death cases: </h2>
+                    <h1 class="today-death-cases"></h1>
+                </div>
+                <div class="main-stat">
+                    <h2 class="stat-heading">Affected countries: </h2>
+                    <h1 class="affected-countries"></h1>
+                </div>
+            </div>
+        </div>
+        
+        <div id='map'>
+            <div id="situation"></div>
+        </div>
+
+        
+
+    </div>
+    <script src="overview.js"></script>
+    <script type="module" src="map.js"></script>
+</body>
+</html>
