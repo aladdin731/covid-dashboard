@@ -109,7 +109,7 @@ function createTimeBarChart(states_situation){
 
 let time_bar_chart;
 function timeBarChart(labels, res) {
-   console.log("bar_top")
+  //  console.log("bar_top")
   if (time_bar_chart) {
     time_bar_chart.destroy();
   }
@@ -153,5 +153,5 @@ function timeBarChart(labels, res) {
       }
     },
   });
-  console.log("bar-bottom")
+  // console.log("bar-bottom")
 }
