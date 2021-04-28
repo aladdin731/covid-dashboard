@@ -33,7 +33,7 @@
                 <img class="logo-img"
                     src="https://cdn.pixabay.com/photo/2020/05/22/19/47/corona-5206882_960_720.png"
                     alt="">
-                <p class="title">Covid Dashboard</p>
+                <p class="logo-title">Covid Dashboard</p>
             </div>
             <ul class="logos-bar">
                 <li class="logo-li">
@@ -97,7 +97,40 @@
         </div>
 
         <div class="contry_time_series">
-
+            <div class="latest-report">
+                <div class="country">
+                    <div class="name">Loading...</div>
+                    <input type="date" class="change-start-date">
+                    <input type="date" class="change-end-date">
+                    <div class="change-country">Change Other Country</div>
+                    <div class="search-country hide">
+                        <div class="search-box">
+                            <input type="text" id="search-input" placeholder="search country">
+                            <img src="./images/close.svg" class="close" alt="">
+                        </div>
+                        <div class="country-list">
+                        </div>
+                    </div>
+                </div>
+                <div class="country-total-case">
+                    <div class="title">Total Cases</div>
+                    <div class="value">0</div>
+                    <div class="new-value">0</div>
+                </div>
+                <div class="country-active-case">
+                    <div class="title">Total Active</div>
+                    <div class="value">0</div>
+                    <div class="new-value">0</div>
+                </div>
+                <div class="country-death-case">
+                    <div class="title">Total Death</div>
+                    <div class="value">0</div>
+                    <div class="new-value">0</div>
+                </div>
+            </div>
+            <div class="chart">
+                <canvas id="time-series-chart"></canvas>
+            </div>
         </div>
 
 
@@ -106,5 +139,6 @@
     <script type="module" src="map.js"></script>
     <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
     <script src="country_time_series.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

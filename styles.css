@@ -33,9 +33,12 @@ body {
     border-radius:50%;
 }
 
-.title {
+.logo-title {
     margin-left: 5%;
     font-size: 2rem;
+    /* border: 1px solid black; */
+    width:100%;
+    padding: .8%;
 }
 
 .logos-bar {
@@ -44,7 +47,7 @@ body {
     list-style: none;
 }
 
-.logo-li {
+.logo-li:last-child {
     margin-left: 50%;
 }
 
@@ -57,4 +60,174 @@ body {
 .overview {
     border: 1px solid black;
 }
+
+/* chart */
+
+.contry_time_series {
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)) ,url('./images/bg.jpg');
+    background-size: cover;
+}
+
+.latest-report{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 80%;
+    margin: 0 auto; */
+    padding-top: 50px;
+    color: #FFF;
+}
+
+.country,
+.country-total-case,
+.country-recovered-case,
+.country-death-case{
+    height: 100px;
+}
+
+.name{
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+.change-country{
+    cursor: pointer;
+}
+
+.title{
+    font-size: 1.3em;
+}
+.country-total-case .value{
+    font-size: 2em;
+    font-weight: bold;
+    color: #fcecdd;
+}
+.country-active-case .value{
+    font-size: 2em;
+    font-weight: bold;
+    color: #fea82f;
+}
+.country-death-case .value{
+    font-size: 2em;
+    font-weight: bold;
+    color: #f44336;
+}
+.new-value{
+    font-size: 1.3em;
+}
+/* -------- CHART -------- */
+.chart{
+    width: 80%;
+    height: 70vh;
+    min-height: 500px;
+
+    margin: 0 auto;
+    padding: 50px 0;
+}
+/* -------- SEARCH COUNTRY -------- */
+.search-country{
+    position: relative;
+    top: 10px;
+}
+
+.hide{
+    display: none;
+}
+
+.fadeIn{
+    animation: fade 0.5s ease-in-out;
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.search-box{
+    position: absolute;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 400px;
+    height: 30px;
+
+    background-color: #111;
+
+    z-index: 1;
+}
+.search-box input{
+    width: 360px;
+    height: 25px;
+
+    border: none;
+
+    background-color: transparent;
+    color: #FFF;
+
+    padding-left: 15px;
+
+    font-size: 1.1em;
+}
+.search-box img{
+    width: 20px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.country-list{
+    display: flex;
+
+    position: absolute;
+    top: 30px;
+
+    width: 400px;
+    height: 300px;
+
+    background-color: #111;
+    opacity: 0.9;
+
+    overflow-y: scroll;
+}
+
+/* SCROLL BAR */
+.country-list::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .country-list::-webkit-scrollbar-track {
+    background: #111;
+  }
+  
+  /* Handle */
+  .country-list::-webkit-scrollbar-thumb {
+    background: #F1F1F1;
+  }
+  
+  /* Handle on hover */
+  .country-list::-webkit-scrollbar-thumb:hover {
+    background: #FFF;
+  }
+
+.country-list ul{
+    width: 100%;
+}
+
+.country-list ul li{
+    list-style: none;
+    cursor: pointer;
+    padding: 10px;
+    color: #FFF;
+}
+.country-list ul li:hover{
+    border-left: 1px solid #FFF;
+}
+
 
