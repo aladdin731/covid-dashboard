@@ -213,7 +213,7 @@ const start_date_element = document.querySelector(".change-start-date");
 const end_date_element = document.querySelector(".change-end-date");
 
 
-// let country_code = geoplugin_countryCode()
+
 let country_code = "US"
 let user_country;
 country_list.forEach((country) => {
