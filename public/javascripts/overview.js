@@ -13,7 +13,7 @@ let affectedCountries = document.querySelector(".affected-countries")
 fetch(baseURL)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
         totalCases.innerText = data.cases
         activeCases.innerText = data.active
         recoveredCases.innerText = data.recovered

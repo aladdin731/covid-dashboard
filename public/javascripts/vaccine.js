@@ -55,28 +55,33 @@ const state_list = [
 
 const bar_ctx = document.getElementById("vaccine-bar-chart").getContext("2d");
 
-fetch(url)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        let states_situation = data.filter(entry => state_list.includes(entry.state))
-        let states_vaccines = []; // {california: 1000, alaska:2000}
-        states_situation.forEach(entry => {
-            let num = Object.values(entry.timeline)[Object.keys(entry).length - 1]
-            states_vaccines.push({state: `${entry.state}`, num_vaccines:parseInt(`${num}`)})
-        })
-        states_vaccines.sort((a, b) => (a.num_vaccines < b.num_vaccines) ? 1 : -1)
-        // first 6 states with the highest number of vaccines
-        states_vaccines = states_vaccines.slice(0, 6); 
-        console.log(states_vaccines)
-        let labels = [];
-        let res = [];
-        states_vaccines.forEach(ele => {
-            labels.push(ele.state);
-            res.push(ele.num_vaccines);
-        })
-        creatBarChart(labels, res);
-    })
+function createVaccineBarChart() {
+
+  fetch(url)
+      .then(res => res.json())
+      .then(data => {
+          console.log(data)
+          let states_situation = data.filter(entry => state_list.includes(entry.state))
+          let states_vaccines = []; // {california: 1000, alaska:2000}
+          states_situation.forEach(entry => {
+              let num = Object.values(entry.timeline)[Object.keys(entry).length - 1]
+              states_vaccines.push({state: `${entry.state}`, num_vaccines:parseInt(`${num}`)})
+          })
+          states_vaccines.sort((a, b) => (a.num_vaccines < b.num_vaccines) ? 1 : -1)
+          // first 6 states with the highest number of vaccines
+          states_vaccines = states_vaccines.slice(0, 6); 
+          console.log(states_vaccines)
+          let labels = [];
+          let res = [];
+          states_vaccines.forEach(ele => {
+              labels.push(ele.state);
+              res.push(ele.num_vaccines);
+          })
+          creatBarChart(labels, res);
+      })
+}
+
+createVaccineBarChart()
 
 
 let bar_chart;

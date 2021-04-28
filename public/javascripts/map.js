@@ -28,7 +28,7 @@ fetch(baseURL)
     .then(res => res.json())
     .then(data => {
         // data is an array here
-        console.log(data)
+        // console.log(data)
         var situation = document.getElementById('situation');
         data.filter(ele => ele.country && (ele.county || ele.province)).forEach(ele => {
             const {coordinates, stats, country, county, province} = ele 
