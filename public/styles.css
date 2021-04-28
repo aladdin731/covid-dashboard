@@ -65,7 +65,7 @@ body {
 
 .contry_time_series {
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)) ,url('./images/bg.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)) ,url('../images/bg.jpg');
     background-size: cover;
 }
 

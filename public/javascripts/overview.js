@@ -1,4 +1,5 @@
 let baseURL = "https://disease.sh/v3/covid-19/all"
+
 let totalCases = document.querySelector(".total-cases")
 let activeCases = document.querySelector(".active-cases")
 let recoveredCases = document.querySelector(".recovered-cases")
