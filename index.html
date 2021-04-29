@@ -8,23 +8,6 @@
     <link rel="icon" href="https://cdn.pixabay.com/photo/2020/05/22/19/47/corona-5206882_960_720.png" type="image/png" />
     <link rel="stylesheet" href="./public/styles.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-    <style>
-        #map {
-            width: 80vw;
-            height: 500px;
-            position: relative; 
-            margin: 50px auto;
-            border: 1px solid black;
-        }
-
-        .mapboxgl-popup {
-            max-width: 200px;
-        }
-        .mapboxgl-popup-content {
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -35,68 +18,61 @@
                     alt="">
                 <p class="logo-title">Covid Dashboard</p>
             </div>
-            <ul class="logos-bar">
-                <li class="logo-li">
+            <div class="logos-bar">
+                <div class="logo-li">
                     <a href="https://github.com/aladdin731/covid-dashboard" target="_blank">
                         <img class="icon" src="./images/github-logo.png" alt="Link to Lin's Github">
                     </a>
-                </li>
-                <li class="logo-li">
+                </div>
+                <div class="logo-li">
                     <a href="https://www.linkedin.com/in/lin-yuan-3a9915154/" target="_blank">
                         <img class="icon" src="./images/linkedin-logo.png" alt="Link to Lin's LinkedIn">
                     </a>
-                </li>
-            </ul>
+                </div>
+            </div>
 
         </div>
 
-
-
-        <div class="chart">
-            <button class="start-time-bar">start-time-bar</button>
-            <h3 id="bar-date"></h3>
-            <canvas id="vaccine-time-bar-chart"></canvas>
-        </div>
-        
         <div class="overview">
-            <h1>Overview</h1>
-            <div class="main-body">
-                <div class="main-stat">
-                    <h2 class="stat-heading">Total cases: </h2>
-                    <h1 class="total-cases"></h1>
+            <div class="overview-title">Worldwide Overview</div >
+            <div class="overview-body">
+                <div class="overview-stats">
+                    <div class="stat-heading">Total Cases </div>
+                    <div class="overview-num total-cases"></div>
                 </div>
-                <div class="main-stat">
-                    <h2 class="stat-heading">Recovered cases: </h2>
-                    <h1 class="recovered-cases"></h1>
+                <div class="overview-stats">
+                    <div class="stat-heading">Recovered Cases </div>
+                    <div class="overview-num recovered-cases"></div>
                 </div>
-                <div class="main-stat">
-                    <h2 class="stat-heading">Deaths: </h2>
-                    <h1 class="deaths"></h1>
+                <div class="overview-stats">
+                    <div class="stat-heading">Deaths </div>
+                    <div class="overview-num deaths"></div>
                 </div>
-                <div class="main-stat">
-                    <h2 class="stat-heading">Active cases: </h2>
-                    <h1 class="active-cases"></h1>
+                <div class="overview-stats">
+                    <div class="stat-heading">Active Cases </div>
+                    <div class="overview-num active-cases"></div>
                 </div>
-                <div class="main-stat">
-                    <h2 class="stat-heading">Test cases: </h2>
-                    <h1 class="test-cases"></h1>
+                <div class="overview-stats">
+                    <div class="stat-heading">Test Cases </div>
+                    <div class="overview-num test-cases"></div>
                 </div>
-                <div class="main-stat">
-                    <h2 class="stat-heading">Today increased cases: </h2>
-                    <h1 class="today-increse-cases"></h1>
+                <div class="overview-stats">
+                    <div class="stat-heading">Affected Countries </div>
+                    <div class="overview-num affected-countries"></div>
                 </div>
-                <div class="main-stat">
-                    <h2 class="stat-heading">Today recovered cases: </h2>
-                    <h1 class="today-recovered-cases"></h1>
+                <div class="overview-stats">
+                    <div class="stat-heading">Today Increased Cases </div>
+                    <div class="overview-num today-increse-cases"></div>
                 </div>
-                <div class="main-stat">
-                    <h2 class="stat-heading">Today death cases: </h2>
-                    <h1 class="today-death-cases"></h1>
+                <div class="overview-stats">
+                    <div class="stat-heading">Today Recovered Cases </div>
+                    <div class="overview-num today-recovered-cases"></div>
                 </div>
-                <div class="main-stat">
-                    <h2 class="stat-heading">Affected countries: </h2>
-                    <h1 class="affected-countries"></h1>
+                <div class="overview-stats">
+                    <div class="stat-heading">Today Death Cases </div>
+                    <div class="overview-num today-death-cases"></div>
                 </div>
+                
             </div>
         </div>
         
@@ -140,10 +116,12 @@
                 <canvas id="time-series-chart"></canvas>
             </div>
         </div>
-        <h1 class="top-6">Top 6 states</h1>
-        <!-- <div class="chart">
-            <canvas id="vaccine-bar-chart"></canvas>
-        </div> -->
+
+        <div class="chart">
+            <button class="start-time-bar">start-time-bar</button>
+            <h3 id="bar-date"></h3>
+            <canvas id="vaccine-time-bar-chart"></canvas>
+        </div>
 
         <div class="race">
             <button class="bar-chart-race">Replay</button>
@@ -158,7 +136,6 @@
     <!-- <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script> -->
     <script src="./public/javascripts/country_time_series.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script src="./public/javascripts/vaccine.js"></script> -->
     <script src="./public/javascripts/time_vaccine.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

@@ -398,8 +398,8 @@ function updateChart() {
           label: "Cases",
           data: cases_list,
           fill: false,
-          borderColor: "#fcecdd",
-          backgroundColor: "#fcecdd",
+          borderColor: "#96bb7c",
+          backgroundColor: "#96bb7c",
           borderWidth: 1,
         },
         {
@@ -422,11 +422,21 @@ function updateChart() {
       labels: dates,
     },
     options: {
+      plugins: {
+            title: {
+                display: true,
+                text: 'Custom Chart Title',
+                padding: {
+                    top: 10,
+                    bottom: 30
+                }
+            }
+      },
       responsive: true,
       maintainAspectRatio: false,
       layout: {
           padding:1
-      }
+      },
     },
   });
 }

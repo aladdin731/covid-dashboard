@@ -57,6 +57,9 @@ const time_bar_ctx = document.getElementById("vaccine-time-bar-chart").getContex
 
 var states_situation;
 
+
+fetchBarData()
+
 function fetchBarData (){
     fetch(time_bar_url)
     .then(res => res.json())
@@ -150,7 +153,20 @@ function timeBarChart(labels, res) {
       maintainAspectRatio: false,
       layout: {
           padding:1
-      }
+      },
+      plugins: {
+            title: {
+                display: true,
+                text: 'Bar Chart Race of Vaccines on Top 6 States',
+                font: {
+                  weight: 'bold'
+                },
+                padding: {
+                    top: 10,
+                    bottom: 30
+                }
+            }
+        }
     },
   });
   // console.log("bar-bottom")

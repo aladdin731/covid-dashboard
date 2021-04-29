@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
+html {
+    background-color:whitesmoke;
+}
+
+
 *{
     margin: 0;
     padding:0;
@@ -10,45 +15,46 @@
 body {
     width:80%;
     margin: 0 auto;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* border: 1px solid black; */
 }
 
 .logo {
     display: flex;
     align-items: center;
     margin: 2%;
+    /* border: 1px solid black; */
 }
 
 .logo-img {
-    position:relative;
-    width:80px;
-    height:80px;
-    overflow:hidden;
-    border-radius:50%;
+    width:60px;
+    height:60px;
 }
 
 .logo-title {
     margin-left: 5%;
-    font-size: 2rem;
-    /* border: 1px solid black; */
-    width:100%;
+    font-size: 1.5rem;
+    font-weight: 600;
     padding: .8%;
+    /* border: 1px solid black; */
 }
 
 .logos-bar {
     display: flex;
     justify-content: space-around;
-    list-style: none;
+    /* border: 1px solid black; */
+    margin-right: 2%;
 }
 
 .logo-li:last-child {
-    margin-left: 50%;
+    margin-left: 40%;
+    margin-right:40%;
 }
 
 .icon {
@@ -56,16 +62,49 @@ body {
     height:40px;
 }
 
+/* overview */
 
 .overview {
-    border: 1px solid black;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    /* border: 1px solid black; */
 }
+
+.overview-title {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.overview-body{
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.overview-stats{
+    padding: 4%;
+    margin: 3%;
+    border-radius: .5rem;
+    border-style:groove;
+}
+
+.stat-heading{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.overview-num {
+    font-size: 1.5em;
+}
+
 
 /* chart */
 
 .contry_time_series {
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)) ,url('../images/bg.jpg');
+    /* background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)) ,url('../images/bg.jpg'); */
     background-size: cover;
 }
 
@@ -76,7 +115,8 @@ body {
     /* width: 80%;
     margin: 0 auto; */
     padding-top: 50px;
-    color: #FFF;
+    color: rgb(14, 13, 13);
+    /* color: white; */
 }
 
 .country,
@@ -101,7 +141,7 @@ body {
 .country-total-case .value{
     font-size: 2em;
     font-weight: bold;
-    color: #fcecdd;
+    color: #96bb7c;
 }
 .country-active-case .value{
     font-size: 2em;
@@ -231,9 +271,6 @@ body {
 }
 
 
-.top-6 {
-    color: white;
-}
 
 
 /* bar chart race */
@@ -242,11 +279,7 @@ text{
     font-family: Open Sans, sans-serif; 
 }
 
-text.caption{ 
-    font-weight: 400; 
-    font-size: 14px; 
-    fill: #777777; 
-}
+
         
 text.label{ 
     font-weight: 600; 
@@ -282,3 +315,19 @@ svg.label{
     overflow: visible 
 }
 
+/* map */
+#map {
+    width: 80vw;
+    height: 500px;
+    position: relative; 
+    margin: 50px auto;
+    border: 1px solid black;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}

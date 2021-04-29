@@ -3,6 +3,7 @@ let bar_chart_race_btn = document.querySelector(".bar-chart-race");
 // let racing_bar_element = document.getElementById("racingbar")
 // let race = document.querySelector(".race")
 
+barCharRace();
 
 bar_chart_race_btn.addEventListener("click", () => {
     if(d3.select(".svg")) {
@@ -121,16 +122,16 @@ class barChartRace {
         this.el = document.querySelector(options.target) || options.target;
         this.title = options.title || '';
         this.ranks = options.ranks || [
-            {y: 115, text: '#1'},
-            {y: 166, text: '#2'},
-            {y: 218, text: '#3'},
-            {y: 270, text: '#4'},
-            {y: 319, text: '#5'},
-            {y: 371, text: '#6'},
-            {y: 422, text: '#7'},
-            {y: 474, text: '#8'},
-            {y: 525, text: '#9'},
-            {y: 577, text: '#10'}
+            {y: 115, text: '1'},
+            {y: 166, text: '2'},
+            {y: 218, text: '3'},
+            {y: 270, text: '4'},
+            {y: 319, text: '5'},
+            {y: 371, text: '6'},
+            {y: 422, text: '7'},
+            {y: 474, text: '8'},
+            {y: 525, text: '9'},
+            {y: 577, text: '10'}
         ];
         this.tickDuration = options.tickDuration || 500;
         this.delayDuration = options.delayDuration || 500;
@@ -180,7 +181,7 @@ class barChartRace {
     // rect Rectangle
     rank() {
         let svg = this.svg.append("g");
-        svg.append("rect").attr('width', 80).attr('height', 600).attr('x', 0).attr('y', 46).attr('fill', '#ffffff');
+        svg.append("rect").attr('width', 80).attr('height', 600).attr('x', 0).attr('y', 46).attr('fill', 'whitesmoke');
         this.ranks.forEach(item => {
             svg.append("text").attr("x", 25).attr("y", item.y).html(item.text).attr('style', 'font-size: 26px; font-weight: 700; fill: #777777;');
         });
