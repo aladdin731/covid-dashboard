@@ -99,6 +99,10 @@ body {
     font-size: 1.5em;
 }
 
+#donut-chart {
+    border: 1px solid black;
+}
+
 
 /* chart */
 
@@ -119,10 +123,7 @@ body {
     /* color: white; */
 }
 
-.country,
-.country-total-case,
-.country-recovered-case,
-.country-death-case{
+.country{
     height: 100px;
 }
 

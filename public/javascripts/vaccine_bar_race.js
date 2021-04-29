@@ -3,6 +3,7 @@ let bar_chart_race_btn = document.querySelector(".bar-chart-race");
 // let racing_bar_element = document.getElementById("racingbar")
 // let race = document.querySelector(".race")
 
+
 barCharRace();
 
 bar_chart_race_btn.addEventListener("click", () => {

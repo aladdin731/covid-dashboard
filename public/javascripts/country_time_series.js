@@ -429,7 +429,10 @@ function updateChart() {
                 padding: {
                     top: 10,
                     bottom: 30
-                }
+                },
+                font: {
+                  weight: 'bold'
+                },
             }
       },
       responsive: true,
