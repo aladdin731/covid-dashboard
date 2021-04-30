@@ -246,22 +246,22 @@ body {
     overflow-y: scroll;
 }
 
-/* SCROLL BAR */
+
 .country-list::-webkit-scrollbar {
     width: 10px;
   }
   
-  /* Track */
+
   .country-list::-webkit-scrollbar-track {
     background: #111;
   }
   
-  /* Handle */
+
   .country-list::-webkit-scrollbar-thumb {
     background: #F1F1F1;
   }
   
-  /* Handle on hover */
+
   .country-list::-webkit-scrollbar-thumb:hover {
     background: #FFF;
   }
@@ -273,12 +273,12 @@ body {
 .country-list ul li{
     list-style: none;
     cursor: pointer;
-    padding: 10px;
-    /* color: #FFF; */
+    padding: 8px;
     color: black;
 }
 .country-list ul li:hover{
-    border-left: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    background-color: rgb(228, 163, 163);
 }
 
 
@@ -295,9 +295,7 @@ body {
     font-weight: bold;
 }
 
-.start-time-bar:hover, .bar-chart-race:hover{
-    
-}
+
 
 .time-bar-date {
     position: relative;
