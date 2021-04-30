@@ -382,8 +382,6 @@ function updateStats() {
 }
 
 
-
-
 let my_chart;
 function updateChart() {
   if (my_chart) {
@@ -422,19 +420,20 @@ function updateChart() {
       labels: dates,
     },
     options: {
-      plugins: {
-            title: {
-                display: true,
-                text: 'Custom Chart Title',
-                padding: {
-                    top: 10,
-                    bottom: 30
-                },
-                font: {
-                  weight: 'bold'
-                },
-            }
-      },
+      // plugins: {
+      //       title: {
+      //           display: true,
+      //           text: 'Custom Chart Title',
+      //           padding: {
+      //               top: 10,
+      //               bottom: 30
+      //           },
+      //           font: {
+      //             weight: 'bold',
+      //             size: 25
+      //           },
+      //       }
+      // },
       responsive: true,
       maintainAspectRatio: false,
       layout: {

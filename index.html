@@ -36,78 +36,71 @@
         <div class="overview">
             <div class="overview-title">Worldwide Overview</div >
             <div class="overview-body">
-
-                <div class="overview-stats">
-                    <div class="stat-heading">Today Increased Cases </div>
-                    <div class="overview-num today-increse-cases"></div>
+                <div class="donut-chart-section">
+                    <canvas id="donut-chart"></canvas>
                 </div>
-                <div class="overview-stats">
-                    <div class="stat-heading">Today Recovered Cases </div>
-                    <div class="overview-num today-recovered-cases"></div>
-                </div>
-                <div class="overview-stats">
-                    <div class="stat-heading">Today Death Cases </div>
-                    <div class="overview-num today-death-cases"></div>
+                <div class="contry_time_series">
+                    <div class="latest-report">
+                        <div class="country">
+                            <div class="country-name">
+                                <div class="name">Loading...</div>
+                                <div class="change-country">Change Other Country</div>
+                            </div>
+                            <input type="date" class="change-start-date">
+                            <input type="date" class="change-end-date">
+                            <!-- <div class="change-country">Change Other Country</div> -->
+                            <div class="search-country hide">
+                                <div class="search-box">
+                                    <input type="text" id="search-input" placeholder="search country">
+                                    <img src="./images/close.svg" class="close" alt="">
+                                </div>
+                                <div class="country-list">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="country-total-case">
+                            <div class="title">Total Cases</div>
+                            <div class="value">0</div>
+                            <div class="new-value">0</div>
+                        </div>
+                        <div class="country-active-case">
+                            <div class="title">Total Active</div>
+                            <div class="value">0</div>
+                            <div class="new-value">0</div>
+                        </div>
+                        <div class="country-death-case">
+                            <div class="title">Total Death</div>
+                            <div class="value">0</div>
+                            <div class="new-value">0</div>
+                        </div>
+                    </div>
+                    <div class="time-chart">
+                        <canvas id="time-series-chart"></canvas>
+                    </div>
                 </div>
             </div>
-            <div class="chart">
-                <canvas id="donut-chart"></canvas>
-            </div>
+            
         </div>
         
         <div id='map'>
             <div id="situation"></div>
         </div>
 
-        <div class="contry_time_series">
-            <div class="latest-report">
-                <div class="country">
-                    <div class="name">Loading...</div>
-                    <input type="date" class="change-start-date">
-                    <input type="date" class="change-end-date">
-                    <div class="change-country">Change Other Country</div>
-                    <div class="search-country hide">
-                        <div class="search-box">
-                            <input type="text" id="search-input" placeholder="search country">
-                            <img src="./images/close.svg" class="close" alt="">
-                        </div>
-                        <div class="country-list">
-                        </div>
-                    </div>
-                </div>
-                <div class="country-total-case">
-                    <div class="title">Total Cases</div>
-                    <div class="value">0</div>
-                    <div class="new-value">0</div>
-                </div>
-                <div class="country-active-case">
-                    <div class="title">Total Active</div>
-                    <div class="value">0</div>
-                    <div class="new-value">0</div>
-                </div>
-                <div class="country-death-case">
-                    <div class="title">Total Death</div>
-                    <div class="value">0</div>
-                    <div class="new-value">0</div>
-                </div>
-            </div>
-            <div class="chart">
-                <canvas id="time-series-chart"></canvas>
-            </div>
-        </div>
-
         <div class="chart">
-            <button class="start-time-bar">start-time-bar</button>
-            <h3 id="bar-date"></h3>
+            <div class="start-time-bar">start-time-bar</div>
+            <div class="time-bar-date">
+                <h3 id="bar-date"></h3>
+            </div>
+
+
+            
             <canvas id="vaccine-time-bar-chart"></canvas>
         </div>
 
         <div class="race">
-            <button class="bar-chart-race">Replay</button>
+            <div class="bar-chart-race">Replay</div>
             <div id="racingbar"></div>
         </div>
-
-
 
     </div>
     <script src="./public/javascripts/overview.js"></script>

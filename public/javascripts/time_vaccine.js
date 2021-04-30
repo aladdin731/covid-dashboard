@@ -159,7 +159,8 @@ function timeBarChart(labels, res) {
                 display: true,
                 text: 'Bar Chart Race of Vaccines on Top 6 States',
                 font: {
-                  weight: 'bold'
+                  weight: 'bold',
+                  size: 25
                 },
                 padding: {
                     top: 10,
