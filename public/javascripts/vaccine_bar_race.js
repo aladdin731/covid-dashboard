@@ -82,7 +82,7 @@ function barCharRace(){
 
             
             states_situation.forEach(state => {
-                racingbar.sets.forEach(date => {
+                racingbar.sets.forEach((date, i) => {
                     const dateDay = moment(date, 'M/D/YY').dayOfYear()
                     const dateBefore = moment().dayOfYear(dateDay - 1).format('M/D/YY')
                     const colorVal = d3.hsl(Math.random() * 360, 0.75, 0.75)
@@ -214,6 +214,7 @@ class barChartRace {
             .ease(d3.easeLinear)
             .call(this.xAxis);
 
+        // bars
         let bars = this.svg.selectAll('.bar').data(this.setSlice, d => d.name);
 
         bars
