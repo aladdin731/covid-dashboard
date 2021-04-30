@@ -167,7 +167,8 @@ body {
 
 .search-country{
     position: relative;
-    top: 10px;
+    top: 30px;
+    left: -160px;
 }
 
 .hide{
@@ -314,8 +315,8 @@ body {
 
 /* bar chart race */
 .race {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 80px;
+    /* margin-bottom: 50px; */
 }
 
 
@@ -377,4 +378,8 @@ svg.label{
 .mapboxgl-popup-content {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
+}
+
+.footer {
+    height: 100px;
 }
