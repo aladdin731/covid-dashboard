@@ -17,7 +17,7 @@ function barCharRace(){
     .then(data => {
         let racingbar = new barChartRace({
                 target: '#racingbar',
-                title: 'Bar Chart Race for COVID-19 Vaccine by State'
+                title: 'Bar Chart Race for COVID-19 Vaccine by Top 6 States'
             })
 
             const time_state_list = [
@@ -123,20 +123,16 @@ class barChartRace {
         this.el = document.querySelector(options.target) || options.target;
         this.title = options.title || '';
         this.ranks = options.ranks || [
-            {y: 115, text: '1'},
-            {y: 166, text: '2'},
-            {y: 218, text: '3'},
-            {y: 270, text: '4'},
-            {y: 319, text: '5'},
-            {y: 371, text: '6'},
-            {y: 422, text: '7'},
-            {y: 474, text: '8'},
-            {y: 525, text: '9'},
-            {y: 577, text: '10'}
+            {y: 130, text: '1'},
+            {y: 215, text: '2'},
+            {y: 300, text: '3'},
+            {y: 385, text: '4'},
+            {y: 470, text: '5'},
+            {y: 555, text: '6'},
         ];
         this.tickDuration = options.tickDuration || 500;
         this.delayDuration = options.delayDuration || 500;
-        this.top = options.top || 10; // 取前几名
+        this.top = options.top || 6; // 取前几名
         this.height = options.height || 600;
         this.width = options.width || 1366 - 80;
         this.margin = options.margin || {
