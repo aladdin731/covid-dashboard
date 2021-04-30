@@ -134,7 +134,7 @@ class barChartRace {
         this.delayDuration = options.delayDuration || 500;
         this.top = options.top || 6; // 取前几名
         this.height = options.height || 600;
-        this.width = options.width || 1366 - 80;
+        this.width = options.width || 1400;
         this.margin = options.margin || {
             top: 80,
             right: 0,
