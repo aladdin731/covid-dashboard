@@ -1,10 +1,7 @@
 
 let bar_chart_race_btn = document.querySelector(".bar-chart-race");
-// let racing_bar_element = document.getElementById("racingbar")
-// let race = document.querySelector(".race")
 
-
-barCharRace();
+// barCharRace();
 
 bar_chart_race_btn.addEventListener("click", () => {
     if(d3.select(".svg")) {
@@ -15,8 +12,10 @@ bar_chart_race_btn.addEventListener("click", () => {
 })
 
 function barCharRace(){
-    axios.get('https://disease.sh/v3/covid-19/vaccine/coverage/states').then(res => {
-            let racingbar = new barChartRace({
+    fetch('https://disease.sh/v3/covid-19/vaccine/coverage/states')
+    .then(res => res.json())
+    .then(data => {
+        let racingbar = new barChartRace({
                 target: '#racingbar',
                 title: 'Bar Chart Race for COVID-19 Vaccine by State'
             })
@@ -73,7 +72,7 @@ function barCharRace(){
                 "Wisconsin",
                 "Wyoming"]
             
-            let states_situation = res.data.filter(entry => time_state_list.includes(entry.state))
+            let states_situation = data.filter(entry => time_state_list.includes(entry.state))
 
             let timelines = Object.keys(states_situation[0].timeline);
             // console.log(timelines)
@@ -112,7 +111,8 @@ function barCharRace(){
         }).catch(err => {
             console.log(err);
         })
-}
+    }
+    
 
 
 
@@ -153,7 +153,7 @@ class barChartRace {
         this.x = this.xScaleLinear();
         this.y = this.yScaleLinear();
         this.xAxis = this.d3AxisTop();
-        this.date = options.date || 'Jan 22',
+        this.date = options.date,
         this.yIndex = options.yIndex || 0;
         this.svg = d3.select(this.el).append("svg").attr("width", this.width).attr("height", this.height);
         this.timeYear = this.svg.append('text').attr('x', this.width-this.margin.right-180).attr('y', 48).html(this.date).style('text-anchor', 'end').attr('style', 'font-size: 44px; font-weight: 700; opacity: 0.75;');
