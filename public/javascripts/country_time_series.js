@@ -213,7 +213,8 @@ const start_date_element = document.querySelector(".change-start-date");
 const end_date_element = document.querySelector(".change-end-date");
 
 
-let country_code = geoplugin_countryCode()
+// let country_code = geoplugin_countryCode()
+let country_code = "US"
 let user_country;
 country_list.forEach((country) => {
   if (country.code == country_code) {
@@ -381,8 +382,6 @@ function updateStats() {
 }
 
 
-
-
 let my_chart;
 function updateChart() {
   if (my_chart) {
@@ -397,8 +396,8 @@ function updateChart() {
           label: "Cases",
           data: cases_list,
           fill: false,
-          borderColor: "#fcecdd",
-          backgroundColor: "#fcecdd",
+          borderColor: "#96bb7c",
+          backgroundColor: "#96bb7c",
           borderWidth: 1,
         },
         {
@@ -421,11 +420,25 @@ function updateChart() {
       labels: dates,
     },
     options: {
+      // plugins: {
+      //       title: {
+      //           display: true,
+      //           text: 'Custom Chart Title',
+      //           padding: {
+      //               top: 10,
+      //               bottom: 30
+      //           },
+      //           font: {
+      //             weight: 'bold',
+      //             size: 25
+      //           },
+      //       }
+      // },
       responsive: true,
       maintainAspectRatio: false,
       layout: {
           padding:1
-      }
+      },
     },
   });
 }

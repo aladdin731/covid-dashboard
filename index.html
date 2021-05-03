@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Covid Dashboard" />
+    <meta property="og:image" content="covid-dashboard.png" />
+    <meta property="og:description" content="A covid dashboard created in Javascript and Chart.js" />
+    <meta property="og:url" content="https://aladdin731.github.io/covid-dashboard/" />
+
+    
+    <title>Covid Dashboard</title>
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2020/05/22/19/47/corona-5206882_960_720.png" type="image/png" />
+    <link rel="stylesheet" href="./public/styles.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img class="logo-img"
+                    src="https://cdn.pixabay.com/photo/2020/05/22/19/47/corona-5206882_960_720.png"
+                    alt="">
+                <p class="logo-title">Covid Dashboard</p>
+            </div>
+            <div class="logos-bar">
+                <div class="logo-li">
+                    <a href="https://github.com/aladdin731/covid-dashboard" target="_blank">
+                        <img class="icon" src="./images/github-logo.png" alt="Link to Lin's Github">
+                    </a>
+                </div>
+                <div class="logo-li">
+                    <a href="https://www.linkedin.com/in/lin-yuan-3a9915154/" target="_blank">
+                        <img class="icon" src="./images/linkedin-logo.png" alt="Link to Lin's LinkedIn">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="overview">
+            <div class="overview-title">Worldwide Overview</div >
+            <div class="overview-body">
+                <div class="donut-chart-section">
+                    <canvas id="donut-chart"></canvas>
+                </div>
+                <div class="contry_time_series">
+                    <div class="latest-report">
+                        <div class="country">
+                            <div class="country-name">
+                                <div class="name">Loading...</div>
+                                <div class="change-country">Change Other Country</div>
+                                <div class="search-country hide">
+                                    <div class="search-box">
+                                        <input type="text" id="search-input" placeholder="search here">
+                                        <img src="./images/close.svg" class="close" alt="">
+                                    </div>
+                                    <div class="country-list">
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="date" class="change-start-date">
+                            <input type="date" class="change-end-date">
+                            
+                        </div>
+                        <div class="country-total-case">
+                            <div class="title">Total Cases</div>
+                            <div class="value">0</div>
+                            <div class="new-value">0</div>
+                        </div>
+                        <div class="country-active-case">
+                            <div class="title">Total Active</div>
+                            <div class="value">0</div>
+                            <div class="new-value">0</div>
+                        </div>
+                        <div class="country-death-case">
+                            <div class="title">Total Death</div>
+                            <div class="value">0</div>
+                            <div class="new-value">0</div>
+                        </div>
+                    </div>
+                    <div class="chart">
+                        <canvas id="time-series-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id='map'>
+            <div id="situation"></div>
+        </div>
+
+        <div class="chart">
+            <div class="start-time-bar">Replay</div>
+            <div class="time-bar-date">
+                <h3 id="bar-date"></h3>
+            </div>
+            <canvas id="vaccine-time-bar-chart"></canvas>
+        </div>
+
+        <div class="race">
+            <div class="bar-chart-race">Replay</div>
+            <div id="racingbar"></div>
+        </div>
+        <div class="footer">
+
+        </div>
+
+    </div>
+    <script src="./public/javascripts/overview.js"></script>
+    <script type="module" src="./public/javascripts/map.js"></script>
+    <!-- <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script> -->
+    <script src="./public/javascripts/country_time_series.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./public/javascripts/time_vaccine.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./public/javascripts/vaccine_bar_race.js" ></script>
+</body>
+</html>

@@ -57,6 +57,9 @@ const time_bar_ctx = document.getElementById("vaccine-time-bar-chart").getContex
 
 var states_situation;
 
+
+fetchBarData()
+
 function fetchBarData (){
     fetch(time_bar_url)
     .then(res => res.json())
@@ -109,7 +112,7 @@ function createTimeBarChart(states_situation){
 
 let time_bar_chart;
 function timeBarChart(labels, res) {
-   console.log("bar_top")
+  //  console.log("bar_top")
   if (time_bar_chart) {
     time_bar_chart.destroy();
   }
@@ -123,20 +126,12 @@ function timeBarChart(labels, res) {
           data: res,
           fill: false,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 205, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(153, 102, 255, 0.2)'
-          ],
-          borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(255, 159, 64)',
-            'rgb(255, 205, 86)',
-            'rgb(75, 192, 192)',
-            'rgb(54, 162, 235)',
-            'rgb(153, 102, 255)'
+            '#f47c7c',
+            '#f6c90e',
+            '#a1de93',
+            '#70a1d7',
+            '#ff9234',
+            '#ac73ff'
           ],
           borderWidth: 1,
         }
@@ -150,8 +145,22 @@ function timeBarChart(labels, res) {
       maintainAspectRatio: false,
       layout: {
           padding:1
-      }
+      },
+      plugins: {
+            title: {
+                display: true,
+                text: 'Bar Chart Race of Vaccines on Top 6 States',
+                font: {
+                  weight: 'bold',
+                  size: 25
+                },
+                padding: {
+                    top: 10,
+                    bottom: 30
+                }
+            }
+        }
     },
   });
-  console.log("bar-bottom")
+  // console.log("bar-bottom")
 }
